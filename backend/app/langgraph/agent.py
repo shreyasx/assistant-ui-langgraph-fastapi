@@ -7,9 +7,10 @@ from langchain_core.tools import BaseTool
 from pydantic import BaseModel
 from .tools import tools
 from .state import AgentState
+from app.config import settings
 
 
-model = ChatOpenAI()
+model = ChatOpenAI(api_key=settings.openai_api_key)
 
 
 def should_continue(state):
